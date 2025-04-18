@@ -1,10 +1,10 @@
 <mat-card class="example-card" appearance="outlined">
     <mat-card-header>
-      <mat-card-title>Card Name</mat-card-title>
-      <mat-card-subtitle> ?? </mat-card-subtitle>
+      <mat-card-title>{{name()}}</mat-card-title>
+      <mat-card-subtitle>{{manaCost()}} </mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="" alt="Card Photo">
+    <img class="round" mat-card-image src="{{image()}}" alt="Card Photo">
     <mat-card-actions>
-      <a href="/detail/id:"><button mat-button>read_more</button></a>
+      <a href="/detail/id:{{id()}}"><button mat-button>read_more</button></a>
     </mat-card-actions>
   </mat-card>

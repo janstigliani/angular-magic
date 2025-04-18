@@ -1,8 +1,12 @@
 <main>
     <app-header></app-header>
-    <app-card></app-card>
+    <div class="grid">
+        <app-card *ngFor="let card of service.arrayCards()" [id]="card.id" [name]="card.name" [manaCost]="card.manaCost"
+            [text]="card.text"
+            [image]="card.imageUrl ? card.imageUrl : 'https://64.media.tumblr.com/4568954fda8082b5f10894cb963af128/8fc167fc6eb7a14c-b2/s540x810/086dad40aad7df0326e0bb94fc21f10192ff1ad1.jpg'">
+        </app-card>
+    </div>
+
 </main>
 
 <app-footer></app-footer>
-
-

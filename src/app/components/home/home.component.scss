@@ -4,5 +4,13 @@ a{
 }
 
 main{
-    height: calc(100% - 107.33px);
+    min-height: calc(100% - 107.33px);
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    row-gap: 1rem;
+    padding: 20px 20px;
 }

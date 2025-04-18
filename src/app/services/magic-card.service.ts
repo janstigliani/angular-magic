@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 import MagicCard from '../models/magic-card';
 
 @Injectable({
@@ -7,7 +7,11 @@ import MagicCard from '../models/magic-card';
 export class MagicCardService {
   static page = 1;
   arrayCards = signal<MagicCard[]>([])
-  constructor() { }
+
+  constructor() {
+    this.getData();
+    effect(() => console.log(this.arrayCards()))
+   }
 
   getData() {
     const baseUrl = "https://api.magicthegathering.io/v1/cards";
@@ -16,7 +20,7 @@ export class MagicCardService {
     return fetch(pageUrl)
         .then(res => res.json())
         .then(data => {
-            this.arrayCards.set(data);
+            this.arrayCards.set(data.cards);
         })
         .catch(err => console.error(err));
 }

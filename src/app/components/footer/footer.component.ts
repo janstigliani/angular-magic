@@ -9,6 +9,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
   styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
-  paginator = document.querySelector('mat-paginator');
-  paginator.nextPage()
+  
+ 
+  constructor (){
+    // this.paginator.nextPage()
+    
+  }
+
+  ngAfterViewInit() {
+    const paginator = document.querySelector('mat-paginator');
+    console.log(paginator);
+    // paginator?.nextPage();
+  }
 }
